@@ -1,0 +1,834 @@
+/* Global Styles */
+:root{
+    --width: 80rem;
+    --red: #ce0e2d;
+}
+*{
+    box-sizing: border-box;
+}
+[center]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+[hover]:hover{
+    background-color: #00000008;
+}
+.box-container{
+    max-width: var(--width);
+    margin: auto;
+}
+
+/* Elements Styles */
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    height: 100vh;
+}
+.container{
+    width: 100%;
+    padding-bottom: 100px;
+    height: 100vh;
+    overflow: scroll;
+}
+.container .header{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 40;
+}
+.container .navbar{
+    background-color: whitesmoke;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.container .navbar .offer{
+    display: flex;
+    background-color: black;
+    color: white;
+    height: 35px;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+}
+.container .navbar .offer a{
+    color: white;
+}
+.container .navbar .tiles{
+    flex: 1;
+    text-align: center;
+}
+.container .navbar .tiles a, b{
+    padding: 5px;
+}
+.container nav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 60px;
+    width: 100%;
+    position: relative;
+}
+nav .bar{
+    display: none;
+    cursor: pointer;
+}
+nav .bar span{
+    font-size: 40px;
+}
+nav .logo{
+    padding-right: 20px;
+}
+nav .search_bar{
+    height: 44px;
+    flex: 1;
+    background-color: white;
+    display: flex;
+    border: 1px solid #767676;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+}
+nav .search_bar .search{
+    height: 100%;
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+}
+nav .search_bar span{
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 8px;
+    font-size: 1.8em;
+}
+nav .search_bar span:hover{
+    background-color: whitesmoke;
+}
+nav .search_bar .search:invalid + span#search-clear{
+    display: none;
+}
+nav .nav-list{
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    position: relative;
+    justify-content: center;
+    height: 100%;
+}
+nav .nav-list:before, nav .nav-list:after{
+    content: "";
+    position: absolute;
+    height: 60%;
+    width: 1px;
+    background-color: #767676;
+    left: 0;
+    top: 25%;
+}
+nav .nav-list:after{
+    left: auto;
+    right: 0;
+}
+nav .nav-list .icon .ico{
+    position: relative;
+    text-align: center;
+}
+nav .nav-list .icon .expand_icon{
+    position: absolute;
+    font-size: 16px;
+    right: 10px;
+    bottom: 2px;
+}
+nav .icon{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    cursor: pointer;
+    user-select: none;
+}
+nav .icon span{
+    font-size: 22px;
+}
+nav .icon:hover{
+    border-color: black;
+}
+.tooltip-container{
+    background-color: rgba(0, 0, 0, 0.125);
+    height: calc(100vh - 95px);
+    width: 100%;
+    position: absolute;
+    z-index: 20;
+    top: 95px;
+}
+.tooltip-container section{
+    height: 100%;
+    position: relative;
+}
+.tooltip-container:not([show]){
+    display: none;
+}
+.tooltip{
+    background-color: white;
+    position: absolute;
+    border: 1px solid #767676;
+    display: flex;
+    visibility: hidden;
+    width: max-content;
+}
+.tooltip::before{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border: inherit;
+    background-color: inherit;
+    top: 7px;
+    left: 50%;
+    transform: rotate(45deg) translateX(-50%);
+}
+.tooltip .content{
+    background-color: inherit;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.tooltip .content .option{
+    padding: 15px;
+    cursor: pointer;
+    display: block;
+}
+.tooltip-reward{
+    left: 68%;
+}
+.tooltip-account{
+    left: 82%;
+}
+.tooltip-account button{
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 0 50px;
+    background-color: #0667a0;
+    outline: 1px solid #0667a0;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+.tooltip-account button#sign-up{
+    background-color: white;
+    color: #0667a0;
+    margin: 20px 0;
+}
+.tooltip-account button#sign-up:hover{
+    outline-width: 2px;
+}
+.tooltip-account button#sign-in:hover{
+    background-color: #064f79;
+}
+.tooltip-container[show=reward] .tooltip-reward,
+.tooltip-container[show=account] .tooltip-account{
+    visibility: visible;
+}
+
+.menu{
+    height: 3rem;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    position: relative;
+    background-color: white;
+}
+.menu section{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+.menu section ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+.menu section :is(ul li, .button){
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+.menu section :is(ul li, .button):hover{
+    border-color:black;
+}
+.menu section .button{
+    gap: 5px;
+    font-size: 13px;
+}
+.menu section .button span{
+    font-size: 18px;
+}
+.menu .menu-container{
+    position: fixed;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    left: 50%;
+    translate: -50%;
+    padding: 15px;
+    height: 600px;
+    background-color: white;
+    width: var(--width);
+}
+.menu .menu-container:not([show]){
+    display: none;
+}
+.menu .menu-container > div{
+    display: none;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+    height: 100%;
+}
+.menu .menu-container > div > div{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 5px;
+}
+.menu .menu-container > div > div:first-child{
+    grid-row: 2 span;
+    background-color: rgb(242, 242, 242);
+}
+.menu .menu-container > div > div:nth-child(4){
+    grid-column: 2 span;
+}
+.menu .menu-container > div :is(h3, h4){
+    margin: 0;
+    font-size: 18px;
+    padding-left: 10px;
+}
+.menu .menu-container > div h4{
+    font-size: 15px;
+}
+.menu .menu-container > div ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.menu .menu-container > div ul li{
+    border-left: 2px solid rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    cursor: pointer;
+    min-height: 35px;
+}
+.menu .menu-container > div ul li:hover{
+    border-color: black;
+}
+.menu .menu-container[show=gift] .menu-gift,
+.menu .menu-container[show=women] .menu-women,
+.menu .menu-container[show=men] .menu-men,
+.menu .menu-container[show=kid] .menu-kid,
+.menu .menu-container[show=shoes] .menu-shoes,
+.menu .menu-container[show=handbag] .menu-handbag,
+.menu .menu-container[show=jewelry] .menu-jewelry,
+.menu .menu-container[show=beauty] .menu-beauty,
+.menu .menu-container[show=home] .menu-home,
+.menu .menu-container[show=bed_bath] .menu-bed_bath,
+.menu .menu-container[show=conn] .menu-conn,
+.menu .menu-container[show=brands] .menu-brands,
+.menu .menu-container[show=clearance] .menu-clearance{
+    display: grid;
+}
+.menu-clearance > ul {
+    gap: 10px;
+}
+.banner{
+    margin-top: 20px;
+    background-color: white;
+}
+.banner .images{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.banner .images .image img{
+    width: 100%;
+}
+.banner .slider{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+}
+.banner .slider .slider-images{
+    display: flex;
+    width: calc(var(--item-count) / var(--view) * 100%);
+    position: absolute;
+    align-items: center;
+    height: 100%;
+    transform: translateX(calc(var(--transX) * 1%));
+    transition: all 1s;
+}
+.banner .slider .slider-images > *{
+    width: calc(100% / var(--item-count));
+    object-fit: cover;
+}
+.banner .slider :is(.previous-btn, .next-btn){
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.357);
+    font-size: 40px;
+    padding-top: 10px;
+    padding-left: 5px;
+    align-self: center;
+    cursor: pointer;
+    z-index: 1;
+}
+.banner .slider :is(.previous-btn, .next-btn) span{
+    font-size: 35px;
+    color: gray;
+}
+.banner .slider .previous-btn{
+    left: 0;
+}
+.banner .slider .next-btn{
+    right: 0;
+}
+.discount{
+    text-align: center;
+}
+.discount img{
+    width: 100%;
+}
+.banner-container {
+    margin-top: 20px;
+}
+.banner-container > img{
+    width: 100%;
+}
+.banner-container.deals .images{
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+}
+.banner-container.deals .images > img{
+    width: 100%;
+}
+.multi-banner > img{
+    margin-top: 30px;
+}
+.heading{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.banner .slider .slider-images .product{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 10px;
+}
+.banner .slider .slider-images .product a{
+    text-decoration: none;
+    color: black;
+}
+.banner .slider .slider-images .product a:hover{
+    text-decoration:underline
+}
+.banner .slider .slider-images .product img{
+    border: thin solid #ddd;
+}
+.banner .slider .slider-images .product:not(:first-child){
+    margin-left: 20px;
+}
+.paragraph{
+    line-height: 1.2rem;
+}
+.paragraph a {
+    color: #0076be;
+}
+.container .buttons{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.container .buttons a{
+    border: 1px solid black;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.container .buttons a:hover{
+    background-color: rgba(0, 0, 0, 0.118);
+}
+.footer .navs{
+    display: flex;
+    padding: 0 5%;
+    gap: 30px;
+}
+.footer .navs > div{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    border-right: 1px solid black;
+    padding: 10px;
+}
+.footer .navs > div :is(label, input){
+    display: none;
+}
+.footer .navs > div:last-child{
+    border: none;
+}
+.footer .navs > div .title{
+    font-size: 18px;
+}
+.footer .navs > div a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.footer .navs > div a:hover{
+    text-decoration: underline;
+}
+.footer .navs > div a p{
+    max-width: 120px;
+}
+.footer .navs > div:last-child img{
+    height: 40px;
+}
+.footer .navs > div:last-child > img{
+    height: 128px;
+    margin-bottom: 30px;
+}
+.footer .contact{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 18px;
+}
+.footer .contact .social-media{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.footer .contact .social-media img{
+    height: 50px;
+    width: 50px;
+}
+.footer .contact .social-media img:nth-of-type(3){
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+}
+.footer .contact .mail{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.footer .contact .mail p{
+    max-width: 180px;
+    text-align: center;
+}
+.footer .contact .mail .input{
+    border: 1px solid black;
+    height: 40px;
+    display: flex;
+}
+.footer .contact .mail .input input{
+    height: 100%;
+    flex: 1;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+}
+.footer .contact .mail .input button{
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border: none;
+}
+.last-box{
+    text-align: center;
+    padding: 30px;
+}
+.last-box .visit{
+    display: flex;
+    gap: 20px;
+    max-width: 70%;
+    margin: auto;
+    white-space: nowrap;
+    flex-wrap: wrap;
+}
+.last-box .visit a{
+    text-decoration: none;
+    color: black;
+    height: 30px;
+    display: flex;
+    align-items: center
+}
+.last-box .visit div{
+    height: 30px;
+    width: 1px;
+    background-color: black;
+}
+.last-box p{
+    color: gray;
+}
+.feedback{
+    position: fixed;
+    right: 16px;
+    top: 50%;
+    border: 1px solid black;
+    padding: 10px 20px;
+    transform: rotate(-90deg) translateY(-50%);
+    background-color: white;
+    z-index: 20;
+    transform-origin: right;
+    cursor: pointer;
+}
+.top{
+    position: fixed;
+    right: 20px;
+    bottom: 100px;
+    background-color: black;
+    color: white;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50%;
+    z-index: 20;
+    transition: opacity .5s;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+}
+.top.show{
+    opacity: 1;
+    pointer-events: initial;
+}
+.top span{
+    scale: 1.5;
+}
+.today_offer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    background-color: white;
+    box-shadow: 0 -5px 5px -5px #020202;
+    z-index: 42;
+    flex-direction: column;
+}
+.today_offer .control{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+.today_offer .control > div{
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    gap: 5px;
+}
+.today_offer .control > div div:last-child{
+    font-size: 14px;
+}
+.today_offer .control span{
+    font-size: 40px;
+    transition: rotate .5s;
+}
+.today_offer .offers{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 10px;
+    margin: auto;
+    display: none;
+}
+.today_offer .offers .cards{
+    display: flex;
+    gap: 15px;
+}
+.today_offer .offers .cards .card{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    flex: 1;
+}
+.today_offer .offers .cards .card .text{
+    display: flex;
+    justify-content: space-between;
+}
+.today_offer .offers .cards .card img{
+    max-width: 100%;
+}
+.today_offer .offers a{
+    align-self: center;
+    color: #0076be;
+}
+.today_offer .offers .cards button{
+    margin: auto;
+    padding: 8px 20px;
+    background-color: #0076be;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.today_offer.open .offers{
+    display: flex;
+}
+.today_offer.open .control div{
+    display: none;
+}
+.today_offer.open .control span{
+    rotate: 180deg;
+}
+
+.sidebar{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.125);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    display: none;
+    transition: all .4s;
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events: none;
+}
+.sidebar.open{
+    background-color: rgba(0, 0, 0, 0.125);
+    pointer-events: all;
+}
+.sidebar-container{
+    width: 90%;
+    background-color: #f5f5f5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all .4s;
+    transform: translateX(-100%);
+}
+.sidebar.open .sidebar-container{
+    transform: translateX(0%);
+}
+.sidebar-container .title{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.sidebar-container span{
+    cursor: pointer;
+}
+.sidebar-container .title span{
+    cursor: pointer;
+    color: gray;
+}
+.sidebar-container .sidebar-items{
+    background-color: white;
+    overflow-y: auto;
+}
+.sidebar-container .sidebar-items .item > .item-heading{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-top: 1px solid #dcdcdc;
+    border-left: none;
+    border-right: none;
+    align-items: center;
+    font-weight: bold;
+    margin: 0;
+    font-size: 18px;
+}
+.sidebar-container .sidebar-items .item:last-of-type{
+    border-bottom: 1px solid #dcdcdc;
+}
+.sidebar-container .sidebar-items .item ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+.sidebar-container .sidebar-items .item  ul li{
+    color: black;
+    border-top: 1px solid #dcdcdc;
+}
+.sidebar-container .sidebar-items .item ul > li > *:first-child{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+.sidebar-container .sidebar-items .item  ul li .item-heading{
+    padding-left: 30px ;
+}
+.sidebar-container .sidebar-items .item  ul li ul li{
+    border: none;
+    border-top: 1px solid #dcdcdc;
+}
+.sidebar-container .sidebar-items .item  ul li ul .item-heading{
+    padding-left: 50px ;
+}
+.sidebar-container .sidebar-items .item a{
+    text-decoration: none;
+    color: black;
+}
+.sidebar-container .sidebar-items .item .item-heading.open + ul{
+    display: block;
+}
+.sidebar-container .other-option ul{
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-container .other-option ul li{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.sidebar-container .other-option ul li a{
+    text-decoration: none;
+    color: black;
+}
+.sidebar-container .other-option div{
+    padding: 0 10px;
+    display: flex;
+    color: gray;
+}
+.sidebar-container .other-option div hr{
+    flex: 1;
+    background-color: black;
+    height: 1px;
+}
+.sidebar-container .content{
+    overflow-y: auto;
+}
