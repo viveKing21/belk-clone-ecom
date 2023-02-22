@@ -1,0 +1,194 @@
+@media only screen and (max-width: 1330px){
+    :root{
+        --width: 60rem;
+    }
+    .container .header .navbar .offer{
+        order: 2;
+    }
+    .tooltip-container{
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+    .tooltip-container .tooltip-reward{
+        left: 57%;
+    }
+    .tooltip-container .tooltip-account{
+        left: 76%;
+    }
+}
+@media only screen and (max-width: 1000px){
+    :root{
+        --width: 95%;
+    }
+    .container nav{
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 0;
+    }
+    .container nav .bar{
+        display: block;
+    }
+    .container nav .search_bar{
+        order: 6;
+        flex-basis: 100%;
+    }
+    .container nav .logo{
+        flex-grow: 1;
+    }
+    .container nav .icon :is(.text, .ico .expand_icon){
+        display: none;
+    }
+    .container nav .icon span{
+        font-size: 25px;
+    }
+    .tooltip-container{
+        display: none;
+    }
+    .menu{
+        height: auto;
+    }
+    .menu :is(.menu-container, section .button){
+        display: none;
+    }
+    .menu section ul{
+        align-items: center;
+        overflow-x: auto;
+        padding: 5px 5px;
+    }
+    .menu section ul li{
+        border: 1px solid black !important;
+        height: auto !important;
+        padding: 8px 15px;
+        white-space: nowrap;
+        border-radius: 5px;
+        transition: background-color .2s;
+    }
+    .menu section ul li:hover{
+        background-color: rgba(0, 0, 0, 0.096);
+    }
+    .footer .contact{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .sidebar{
+        display: block;
+    }
+}
+@media only screen and (max-width: 760px){
+    .banner .images{
+        grid-template-columns: 1fr;
+    }
+    .banner .images .image{
+        display: flex;
+    }
+    .banner .images .image img{
+        width: 60%;
+        margin: auto;
+    }
+    .banner.banner-slider-blue .slider, .banner.banner-slider-green .slider{
+        --view: 2 !important;
+    }
+    .banner .fullsized{
+        height: 300px;
+    }
+    .banner .fullsized img{
+        height: 100%;
+        object-fit: cover;
+    }
+    .category-slider{
+        --view: 4 !important;
+    }
+    .banner-image{
+        flex-direction: column;
+    }
+    .banner-image img{
+        display: none;
+    }
+    .banner-image img[style]{
+        display: block !important;
+        width: 100%;
+    }
+    .responsive-deal{
+        grid-template-rows: 1fr 1fr;
+    }
+    .product-slider{
+        --view: 4 !important;
+        height: max-content;
+    }
+    .footer .contact .social-media{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .footer .contact .social-media p{
+        width: 100%;
+        text-align: center;
+    }
+    .last-box{
+        padding: 10px;
+    }
+    .last-box .visit{
+        min-width: 100%;
+    }
+    .footer{
+        width: 100%;
+        margin-top: 40px;
+    }
+    .footer .navs{
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+    }
+    .footer .navs div{
+        border-right: none;
+    }
+    .footer .navs > div label{
+        display: block;
+    }
+    .footer .navs div:not(:last-child) .title{
+        font-size: 20px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+    .footer .navs > div{
+        border-top: 1px solid black !important;
+    }
+    .footer .navs > div:not(:last-child) a{
+        display: none;
+    }
+    .footer .navs div:last-child{
+        align-items: center;
+        padding-top: 20px;
+        text-align: center;
+    }
+    .footer .navs div:last-child > img{
+        display: none;
+    }
+    .footer .navs > div input{
+        display: none;
+    }
+    .footer .navs > div input:checked ~ a{
+        display: block;
+    }
+    .buttons ~ :is(hr, br){
+        display: none;
+    }
+    .buttons ~ p{
+        margin-top: 40px;
+    }
+}
+@media only screen and (max-width: 690px){
+    .product-slider{
+        --view: 3 !important;
+        height: max-content;
+    }
+    .visit{
+        flex-direction: column;
+        align-items: center;
+    }
+    .visit .divider{
+        display: none;
+    }
+}
