@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <script src="script/script.js" defer></script>
-    <script src="script/signup.js" type="module"></script>
+    <script src="script/account.js" type="module"></script>
     <style>
         .box-container form{
             display: flex;
@@ -21,6 +21,7 @@
             width: 400px;
             gap: 20px;
             margin: auto;
+            margin-top: 20px;
         }
         .box-container form p{
             font-size: 20px;
@@ -137,19 +138,23 @@
                         </div>
                         <div class="tooltip tooltip-account">
                             <div class="content">
-                                <button id="sign-in">Sing In</button>
-                                <button id="sign-up">Create Account</button>
+                                <button id="sign-in" onclick="location.href='signin.html'">Sing In</button>
+                                <button id="sign-up" onclick="location.href='signup.html'">Create Account</button>
                                 <a class="option" hover>
-                                    Manage My Accont
+                                    <span class="material-symbols-outlined">inventory_2</span>
+                                    Find My Order
                                 </a>
                                 <a class="option" hover>
-                                    Pay My Bill
+                                    <span class="material-symbols-outlined">add_box</span>
+                                    B.O. Rewards+
                                 </a>
                                 <a class="option" hover>
-                                    My Rewards Card Benefits
+                                    <span class="material-symbols-outlined">list_alt</span>
+                                    Find a Wish List
                                 </a>
                                 <a class="option" hover>
-                                    Apply For a New Card
+                                    <span class="material-symbols-outlined">redeem</span>
+                                    Find a Registry
                                 </a>
                             </div>
                         </div>

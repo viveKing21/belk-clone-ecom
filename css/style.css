@@ -182,6 +182,7 @@ nav .icon:hover{
     display: flex;
     visibility: hidden;
     width: max-content;
+    transform: translateX(-50%);
 }
 .tooltip::before{
     content: "";
@@ -206,13 +207,12 @@ nav .icon:hover{
 .tooltip .content .option{
     padding: 15px;
     cursor: pointer;
-    display: block;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
-.tooltip-reward{
-    left: 68%;
-}
-.tooltip-account{
-    left: 82%;
+.tooltip .content .option span{
+    color: rgb(65, 65, 65);
 }
 .tooltip-account button{
     height: 50px;
@@ -279,7 +279,7 @@ nav .icon:hover{
     font-size: 18px;
 }
 .menu .menu-container{
-    position: fixed;
+    position: absolute;
     box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
     left: 50%;
     translate: -50%;

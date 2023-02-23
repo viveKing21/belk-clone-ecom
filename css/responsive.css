@@ -9,12 +9,6 @@
         top: 60px;
         height: calc(100vh - 60px);
     }
-    .tooltip-container .tooltip-reward{
-        left: 57%;
-    }
-    .tooltip-container .tooltip-account{
-        left: 76%;
-    }
 }
 @media only screen and (max-width: 1000px){
     :root{
