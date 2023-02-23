@@ -32,6 +32,11 @@ expandBtns.forEach(btn => {
     let tooltipId = btn.getAttribute("tooltip")
     let tooltipItem = document.querySelector(`.tooltip-${tooltipId}`)
 
+    const setPosition = () => {
+        let { x, width } = btn.getBoundingClientRect()
+        tooltipItem.style.left = x + width / 2 + "px"
+    }
+
     btn.onclick = () => {
         menuContainer.removeAttribute("show") // close menu
         document.onclick = null
@@ -39,8 +44,12 @@ expandBtns.forEach(btn => {
         
         if(currentTooltip == tooltipId){
             tooltip.removeAttribute("show")
+            removeEventListener('resize', setPosition)
         }
         else{
+            setPosition()
+            addEventListener('resize', setPosition)
+
             tooltip.setAttribute("show", tooltipId)
 
             setTimeout(() => {
@@ -48,6 +57,7 @@ expandBtns.forEach(btn => {
                     if(tooltipItem.contains(e.target)) return
                     tooltip.removeAttribute("show")
                     document.onclick = null
+                    removeEventListener('resize', setPosition)
                 }
             }, 1)
         }
@@ -178,10 +188,3 @@ closeBtnSidebar.onclick = () => {
 sidebar.onclick = (e) => {
     if(e.target === sidebar) closeBtnSidebar.onclick()
 }
-
-
-// temp
-
-container.scrollTo({
-    top: container.scrollHeight
-})

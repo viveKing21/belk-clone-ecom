@@ -1,0 +1,90 @@
+.product-container{
+    display: flex;
+    padding: 10px;
+    gap: 20px;
+}
+.product-container .filter{
+    width: 300px;
+}
+.product-container .products{
+    flex: 1;
+}
+.product-container .products{
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-container .products .title{
+    font-size: 24px;
+    flex: 1;
+}
+.product-container .products .sort select{
+    height: 35px;
+    padding: 0 10px;
+}
+.product-container .products .content{
+    width: 100%;
+    height: 100%;
+}
+
+.filter > .title{
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+    padding: 10px 10px;
+    padding-left: 0;
+}
+
+.filter > ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.filter > ul li{
+    border-bottom: 1px solid gray;
+    padding: 10px 10px;
+    padding-left: 0;
+}
+.filter > ul li .text{
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.filter > ul li > input{
+    display: none;
+}
+.filter > ul li > input:checked + div{
+    display: flex;
+}
+.filter > ul li .text span{
+    cursor: pointer;
+}
+.filter > ul li > div:last-child{
+    display: none;
+}
+.filter > ul li .colors{
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+}
+.filter > ul li .colors .color{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.filter > ul li .colors .color .circle{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid rgb(199, 199, 199);
+    cursor: pointer;
+
+}
+.filter > ul li .colors .color .name{
+    font-size: 12px;
+}
+.filter > ul li .genders{
+    flex-direction: column;
+}
