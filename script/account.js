@@ -48,12 +48,12 @@ if(signInForm){
 
         if(user){
             if(user.ps == signInForm.password.value){
-                error.textContent = "Password does not match"
-            }
-            else{
                 let userId = user.em.split("@")[0]
                 localStorage.setItem(KEYS.loggedIn, btoa(userId))
                 location.href = "/"
+            }
+            else{
+                error.textContent = "Password does not match"
             }
         }
         else{

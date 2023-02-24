@@ -30,7 +30,7 @@ body{
     width: 100%;
     padding-bottom: 100px;
     height: 100vh;
-    overflow: scroll;
+    overflow: auto;
 }
 .container .header{
     position: sticky;
@@ -159,6 +159,19 @@ nav .icon span{
 }
 nav .icon:hover{
     border-color: black;
+}
+nav .icon.cart{
+    position: relative;
+}
+nav .icon.cart[data-item]::after{
+    content: attr(data-item);
+    position: absolute;
+    top: 5px;
+    left: 100%;
+    background-color: var(--red);
+    padding: 0px 4px;
+    color: white;
+    border-radius: 10px;
 }
 .tooltip-container{
     background-color: rgba(0, 0, 0, 0.125);

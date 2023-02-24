@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/css/product.css">
     <script src="/script/script.js" defer></script>
     <script src="/script/main.js" type="module" defer></script>
+    <script src="/script/product.js" type="module" defer></script>
 </head>
 <body>
     <div class="container">
@@ -91,8 +92,8 @@
                         </div>
                         <div class="tooltip tooltip-account">
                             <div class="content">
-                                <button id="sign-in" onclick="location.href='signin.html'">Sing In</button>
-                                <button id="sign-up" onclick="location.href='signup.html'">Create Account</button>
+                                <button id="sign-in" onclick="location='/signin.html'">Sing In</button>
+                                <button id="sign-up" onclick="location='/signup.html'">Create Account</button>
                                 <a class="option" hover>
                                     <span class="material-symbols-outlined">inventory_2</span>
                                     Find My Order
@@ -2497,56 +2498,7 @@
                             </label>
                         </div>
                         <input type="checkbox" id="filter-color">
-                        <div class="colors">
-                            <div class="color">
-                                <div class="circle" style="background-color: Beige;"></div>
-                                <div class="name">Beige</div>
-                            </div>
-                            <div class="color">
-                                <div class="circle" style="background-color: black;"></div>
-                                <div class="name">Black</div>
-                            </div>
-                            <div class="color">
-                                <div class="circle" style="background-color: blue;"></div>
-                                <div class="name">Blue</div>
-                            </div>
-                            <div class="color">
-                                <div class="circle" style="background-color: brown;"></div>
-                                <div class="name">Brown</div>
-                            </div>
-                            <div class="color">
-                                <div class="circle" style="background-color: green;"></div>
-                                <div class="name">Green</div>
-                            </div>
-                            <div class="color">
-                                <div class="circle" style="background-color: grey;"></div>
-                                <div class="name">Grey</div>
-                            </div>
-                            <div class="color">
-                                <div class="circle" style="background-color: orange;"></div>
-                                <div class="name">Orange</div>
-                            </div>
-                            <div class="color">
-                                <div class="circle" style="background-color: pink;"></div>
-                                <div class="name">Pink</div>
-                            </div>
-                            <div class="color">
-                                <div class="circle" style="background-color: purple;"></div>
-                                <div class="name">Purple</div>
-                            </div>
-                            <div class="color">
-                                <div class="circle" style="background-color: red;"></div>
-                                <div class="name">Red</div>
-                            </div>
-                            <div class="color">
-                                <div class="circle" style="background-color: white;"></div>
-                                <div class="name">White</div>
-                            </div>
-                            <div class="color">
-                                <div class="circle" style="background-color: yellow;"></div>
-                                <div class="name">Yellow</div>
-                            </div>
-                        </div>
+                        <div class="colors"></div>
                     </li>
                     <li>
                         <div class="text">
@@ -2556,38 +2508,7 @@
                             </label>
                         </div>
                         <input type="checkbox" id="filter-gender">
-                        <div class="genders">
-                            <div class="gender" gender="boys">
-                                <label>
-                                    <input type="checkbox" >
-                                     Boys <span>(0)</span>
-                                </label>
-                            </div>
-                            <div class="gender" gender="women">
-                                <label>
-                                    <input type="checkbox" >
-                                    Girls <span>(0)</span>
-                                </label>
-                            </div>
-                            <div class="gender" gender="men">
-                                <label>
-                                    <input type="checkbox" >
-                                    Men <span>(0)</span>
-                                </label>
-                            </div>
-                            <div class="gender" gender="women">
-                                <label>
-                                    <input type="checkbox" >
-                                    Neutral <span>(0)</span>
-                                </label>
-                            </div>
-                            <div class="gender" gender="women">
-                                <label>
-                                    <input type="checkbox" >
-                                    Women <span>(0)</span>
-                                </label>
-                            </div>
-                        </div>
+                        <div class="genders"></div>
                     </li>
                     <li>
                         <div class="text">
@@ -2597,20 +2518,7 @@
                             </label>
                         </div>
                         <input type="checkbox" id="filter-brand">
-                        <div class="brands">
-                            <div class="brand" gender="women">
-                                <input type="checkbox" >
-                                Women <span>(0)</span>
-                            </div>
-                            <div class="brand" gender="men">
-                                <input type="checkbox" >
-                                Men <span>(0)</span>
-                            </div>
-                            <div class="brand" gender="women">
-                                <input type="checkbox" >
-                                Women   <span>(0)</span>
-                            </div>
-                        </div>
+                        <div class="brands"></div>
                     </li>
                 </ul>
             </div>
@@ -2622,10 +2530,107 @@
                         <option>All</option>
                         <option value="htl">Price: High to Low</option>
                         <option value="lth">Price: Low to High</option>
-                        <option value="rate">Top Rated</option>
+                        <option value="off">Discounts</option>
                     </select>
                 </div>
-                <div class="content"></div>
+                <div class="content">
+                    <div class="card">
+                        <div class="img">
+                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
+                        </div>
+                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
+                        <div class="price">
+                            $50 <span>After Coupon</span>
+                        </div>
+                        <strike>$72.00</strike>
+                        <button>Add to Cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                    <div class="card">
+                        <div class="img">
+                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
+                        </div>
+                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
+                        <div class="price">
+                            $50 <span>After Coupon</span>
+                        </div>
+                        <strike>$72.00</strike>
+                        <button>Add to Cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                    <div class="card">
+                        <div class="img">
+                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
+                        </div>
+                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
+                        <div class="price">
+                            $50 <span>After Coupon</span>
+                        </div>
+                        <strike>$72.00</strike>
+                        <button>Add to Cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                    <div class="card">
+                        <div class="img">
+                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
+                        </div>
+                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
+                        <div class="price">
+                            $50 <span>After Coupon</span>
+                        </div>
+                        <strike>$72.00</strike>
+                        <button>Add to Cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                    <div class="card">
+                        <div class="img">
+                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
+                        </div>
+                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
+                        <div class="price">
+                            $50 <span>After Coupon</span>
+                        </div>
+                        <strike>$72.00</strike>
+                        <button>Add to Cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                    <div class="card">
+                        <div class="img">
+                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
+                        </div>
+                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
+                        <div class="price">
+                            $50 <span>After Coupon</span>
+                        </div>
+                        <strike>$72.00</strike>
+                        <button>Add to Cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                    <div class="card">
+                        <div class="img">
+                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
+                        </div>
+                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
+                        <div class="price">
+                            $50 <span>After Coupon</span>
+                        </div>
+                        <strike>$72.00</strike>
+                        <button>Add to Cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                    <div class="card">
+                        <div class="img">
+                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
+                        </div>
+                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
+                        <div class="price">
+                            $50 <span>After Coupon</span>
+                        </div>
+                        <strike>$72.00</strike>
+                        <button>Add to Cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="feedback">Feedback</div>
