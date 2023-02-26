@@ -121,3 +121,15 @@ body{
         grid-template-columns: repeat(1, 1fr) !important;
     }
 }
+
+@media screen and (min-width: 1600px) {
+    .product-content{
+        grid-template-columns: repeat(6, 1fr) !important;
+    }
+}
+@media screen and (min-width: 2000px) {
+    .product-content{
+        grid-template-columns: repeat(8, 1fr) !important;
+    }
+}
+
