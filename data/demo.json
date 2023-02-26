@@ -178,164 +178,163 @@
     "women": [
         {
             "id": 1,
-            "title": "Estée Lauder Pleasures Simple Moments Fragrance Set",
-            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=5900055_G28HR3_A_000&$DWP_PRODUCT_PLP_LARGE_t1$"],
-            "price": 104,
+            "title": "White Mark Summer Time Palazzo Pants",
+            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=1804277_ES817Y7Q93_B_260&$DWP_PRODUCT_PLP_DESKTOP_t1$"],
+            "price": 54,
             "spec": {
-                "color": "red",
-                "gender": "girls",
-                "brand": "annick goutal"
+                "color": "khaki",
+                "gender": "women",
+                "brand": "marker"
             }
         },
         {
             "id": 2,
-            "title": "Juicy Couture Viva La Juicy Eau de Parfum Spray Gift Set",
-            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=5901093_A0131886_A_000&$DWP_PRODUCT_PLP_DESKTOP_t1$"],
-            "price": 110,
+            "title": "Bobbi Brown Must Haves Set, $15 with Belk purchase",
+            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=1500516_58643MA_A_671&$DWP_PRODUCT_PLP_LARGE_t1$"],
+            "price": 46,
             "spec": {
-                "color": "red",
-                "gender": "girls",
-                "brand": "annick goutal"
+                "color": "pink",
+                "gender": "women",
+                "brand": "marker"
             }
         },
         {
             "id": 3,
-            "title": "Bobbi Brown Crushed Liquid Lip",
-            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=5900109_EL11_B_650&$DWP_PRODUCT_PLP_DESKTOP_t1$"],
-            "price": 32,
-            "discount": 0.1,
+            "title": "Vince Camuto Women's Sleeveless Halter Floral Print Midi Dress",
+            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=1500516_30982MA_A_001&$DWP_PRODUCT_PLP_LARGE_t1$"],
+            "price": 110,
+            "discount": 0.2,
             "spec": {
-                "color": "red",
-                "gender": "girls",
-                "brand": "annick goutal"
+                "color": "black",
+                "gender": "women",
+                "brand": "vince camuto"
             }
         },
         {
             "id": 4,
-            "title": "Estée Lauder Beautiful Romantic Favorites Fragrance Set",
-            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=5900055_G28ER3_A_000&$DWP_PRODUCT_PLP_DESKTOP_t1$"],
-            "price": 100,
+            "title": "MOON RIVER Women's Puff Sleeve Tiered Shirred Midi Dress",
+            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=1804153_MR7963_A_703&$DWP_PRODUCT_PLP_LARGE_t1$"],
+            "price": 114,
             "spec": {
-                "color": "red",
-                "gender": "girls",
-                "brand": "annick goutal"
+                "color": "beige",
+                "gender": "women",
+                "brand": "moon river"
             }
         },
         {
             "id": 5,
-            "title": "Estée Lauder Beautiful Romantic Favorites Fragrance Set",
-            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=5900054_A0133540_B_000&$DWP_PRODUCT_PLP_DESKTOP_t1$"],
-            "price": 102,
+            "title": "Lilly Pulitzer® Women's Diann T-Shirt Dress",
+            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=1802411_0087834852W7_A_485&$DWP_PRODUCT_PLP_LARGE_t1$"],
+            "price": 108,
+            "discount": 0.5,
             "spec": {
-                "color": "red",
-                "gender": "girls",
-                "brand": "annick goutal"
+                "color": "skyblue",
+                "gender": "women",
+                "brand": "pulitzer"
             }
         },
         {
             "id": 6,
-            "title": "ANNICK GOUTAL Annick Goutal Rose Pompon  Annick Goutal Gift Set -- 3.4 oz Eau De Toilette Spray + 1.3 oz Garden Hand Balm (Women)",
-            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=2272_BLKMR16311_A_000&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$"],
-            "price": 228.99,
-            "discount": 0.25,
+            "title": "Bobbi Brown Must Haves Set, $15 with Belk purchase",
+            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=1501078_P220823B_B_423&$DWP_PRODUCT_PLP_LARGE_t1$"],
+            "price": 47,
+            "discount": 0.3,
             "spec": {
-                "color": "green",
-                "gender": "girls",
-                "brand": "annick goutal"
+                "color": "*",
+                "gender": "women",
+                "brand": "velk"
             }
         },
         {
             "id": 7,
-            "title": "A Bugs Life Boys 8-20 Mom Raised A Rebel Orange Text Rebel Logo Crew Graphic T-Shirt",
-            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=4501315_STRW385540001008_A_060&$DWP_PRODUCT_PLP_DESKTOP_t1$"],
-            "price": 38,
+            "title": "Crown & Ivy™ Women's Sleeveless Pom Print Dress",
+            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=1804597_1566CI_A_655&$DWP_PRODUCT_PLP_LARGE_t1$"],
+            "price": 59,
             "discount": 0.3,
             "spec": {
-                "color": "grey",
-                "gender": "boys",
-                "brand": "a bugs life"
+                "color": "lightpink",
+                "gender": "women",
+                "brand": "crown & ivy"
             }
         },
         {
             "id": 8,
-            "title": "Accessory Street Floral Embroidered Bolero Hat",
-            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=2600836_CH0122005_A_267&$DWP_PRODUCT_PLP_DESKTOP_t1$"],
-            "price": 48,
-            "discount": 0.2,
+            "title": "Betsy & Adam Women's Sleeveless Halter Neck Ruffle Skirt Floral Chiffon Gown",
+            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=1500355_A25594_B_015&$DWP_PRODUCT_PLP_LARGE_t1$"],
+            "price": 59,
             "spec": {
-                "color": "beige",
-                "gender": "neutral",
-                "brand": "accessory street"
+                "color": "*",
+                "gender": "women",
+                "brand": "velk"
             }
         },
         {
             "id": 9,
-            "title": "AeraVida Beautiful Large White Mother of Pearl Plumeria Flower Post Bridal Earrings for Bride",
-            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=2256_BLKMR162028_B_100&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$"],
-            "price": 21,
+            "title": "TRUE CRAFT Small Rise Skinny Jeans",
+            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=1804491_13623FAJ000022_A_401&$DWP_PRODUCT_PLP_LARGE_t1$"],
+            "price": 9,
             "spec": {
-                "color": "white",
+                "color": "lightblue",
                 "gender": "women",
-                "brand": "aeravida"
-            }
-        },
-        {
-            "id": 9,
-            "title": "AeraVida Love Inspired Prettty Butterfly Life Transformation Sterling Silver Ring Cute and Trendy Fashioin Nature and Animals Jewelry Gifts for Women and Girls",
-            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=2256_BLKMR147874_B_020&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$"],
-            "price": 34.99,
-            "spec": {
-                "color": "silver",
-                "gender": "women",
-                "brand": "aeravida"
+                "brand": "true craft"
             }
         },
         {
             "id": 10,
-            "title": "Agnes Orinda Women's Plus Size Blouses Pin Dots Round Neck Cute Basic Top",
-            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=2252_BLKMR175095_A_410&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$"],
-            "price": 36.69,
-            "discount": 0.4,
+            "title": "TRUE CRAFT Mid Rise Skinny Ankle Jeans",
+            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=1804491_13623FAJ000022_A_401&$DWP_PRODUCT_PLP_LARGE_t1$"],
+            "price": 10,
             "spec": {
-                "color": "silver",
+                "color": "lightblue",
                 "gender": "women",
-                "brand": "agnes orinda"
+                "brand": "true craft"
             }
         },
         {
             "id": 11,
-            "title": "Agnes Orinda Women's Plus Size Chiffon Flared Ruffle Sleeve Keyhole Blouse Floral Top",
-            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=2252_BLKMR175078_A_600&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$"],
-            "price": 36.69,
+            "title": "TRUE CRAFT High Rise Skinny Ankle Jeans",
+            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=1804491_13623FAJ000025_A_401&$DWP_PRODUCT_PLP_LARGE_t1$"],
+            "price": 10,
             "discount": 0.4,
             "spec": {
-                "color": "indigo",
+                "color": "blue",
                 "gender": "women",
-                "brand": "agnes orinda"
+                "brand": "true craft"
             }
         },
         {
             "id": 12,
-            "title": "Agnes Orinda Plus Size Shrug for Women Short Sleeve Lace Open Front Crop Bolero Cardigan",
-            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=2252_BLKMR175115_B_250&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$"],
-            "price": 31.99,
-            "discount": 0.2,
+            "title": "Crown & Ivy™ Women's Long Sleeve Baby Terry Solid T-Shirt",
+            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=1804394_72623FAK000061_A_660&$DWP_PRODUCT_PLP_LARGE_t1$"],
+            "price": 11,
             "spec": {
-                "color": "beige",
+                "color": "pink",
                 "gender": "women",
-                "brand": "agnes orinda"
+                "brand": "crown & ivy"
             }
         },
         {
             "id": 13,
-            "title": "Alder Creek Gift Baskets Moscow Mule Gift Basket",
-            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=9600324_FG04773_A_999&$DWP_PRODUCT_PLP_DESKTOP_t1$"],
-            "price": 250,
-            "discount": 0.50,
+            "title": "Crown & Ivy™ Women's Long Sleeve Solid Ribbed T-Shirt",
+            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=1804394_72623HOK000000_A_579&$DWP_PRODUCT_PLP_LARGE_t1$"],
+            "price": 14,
+            "discount": 0.1,
             "spec": {
-                "color": "*",
-                "gender": "*",
-                "brand": "alder creek gift baskets"
+                "color": "lightblue",
+                "gender": "women",
+                "brand": "crown & ivy"
+            }
+        },
+        {
+            "id": 14,
+            "title": "Wonderly Women's Short Sleeve V-Neck Dolman T-Shirt",
+            "images": ["https://belk.scene7.com/is/image/Belk?layer=0&src=1804513_13023YRK000008_A_727&$DWP_PRODUCT_PLP_LARGE_t1$"],
+            "price": 19,
+            "discount": 0.2,
+            "spec": {
+                "color": "yellow",
+                "gender": "women",
+                "brand": "wonderly"
             }
         }
     ],
