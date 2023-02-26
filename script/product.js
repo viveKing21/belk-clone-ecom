@@ -34,6 +34,10 @@ const createCard = (item) => {
     
     addBtn.textContent = "Add to Cart"
     buyBtn.textContent = "Buy Now"
+
+    buyBtn.onclick = () => {
+        location = `checkout.html?products=${item.id}&page=${query.get("page")}`
+    }
     
     if(auth()){
         let {data} = getCart()

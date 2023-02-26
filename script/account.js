@@ -13,9 +13,9 @@ if(signUpForm){
     signUpForm.onsubmit = (e) => {
         e.preventDefault()
 
-        let user = getUser(signUpForm.email.value)
+        let {data} = getUser(signUpForm.email.value)
     
-        if(user == undefined){
+        if(data == undefined){
             let userData = {
                 fn: signUpForm.fname.value,
                 ln: signUpForm.lname.value,
@@ -23,10 +23,9 @@ if(signUpForm){
                 ps: signUpForm.password.value,
                 st: 1
             }
-            let allUsers = getUser()
-            allUsers.push(userData)
-
-            localStorage.setItem(KEYS.user, JSON.stringify(allUsers))
+            let {data, update} = getUser()
+            data.push(userData)
+            update()
 
             location.href = "signin.html"
         }

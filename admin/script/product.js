@@ -156,7 +156,10 @@ const isUncorruptedUrl = async url => {
 addProductForm.onsubmit = async e => {
     e.preventDefault()
 
-    let id = productData.reduce((acc, cur) => acc.id > cur.id ? acc:cur).id + 1;
+    let id = 1;
+    if(productData.length) {
+        id = productData.reduce((acc, cur) => acc.id > cur.id ? acc:cur).id + 1;
+    }
 
     let product = {
         id,
@@ -178,6 +181,7 @@ addProductForm.onsubmit = async e => {
 
         let data = JSON.parse(localStorage.getItem(KEYS.product))
 
+        if(data[query.get("page")] == undefined) data[query.get("page")] = []
         data[query.get("page")].push(product)
 
         localStorage.setItem(KEYS.product, JSON.stringify(data))

@@ -1,4 +1,4 @@
-import { auth, currency, getCartItems, getCurrentUser, getOrder, getProduct } from "./control.js"
+import { auth, currency, getCartItems, getCurrentUser, getOrder, getProduct, KEYS } from "./control.js"
 
 if(auth() == null){
     location = "/signin.html"
@@ -58,7 +58,7 @@ let currentStep = 1;
 let productContainer = stepsPage[0].querySelector(".product-container")
 let priceDetails = stepsPage[0].querySelector(".cart-details")
 
-const updatePriceUi = (items) => {
+const updatePriceUi = (productsData) => {
     let total_price = 0
     let off_price = 0
 
@@ -67,10 +67,12 @@ const updatePriceUi = (items) => {
     let discounts = priceDetails.querySelector(".d")
     let finalPrice = priceDetails.querySelector(".fp")
 
-    items.forEach(item => {
-        total_price += item.price
-        off_price += item.price * (1 - (item.discount || 0))
-    })
+    for(let page in productsData){
+        productsData[page].forEach(item => {
+            total_price += item.price
+            off_price += item.price * (1 - (item.discount || 0))
+        })
+    }
 
     sellingPrice.textContent = totalPrice.textContent = currency(total_price)
     finalPrice.firstElementChild.textContent = currency(off_price + (off_price * .18))
@@ -82,8 +84,6 @@ const updatePriceUi = (items) => {
     }
 }
 const itemListCreate = (items, key) => {
-    updatePriceUi(items)
-
     items.forEach((item, i) => {
         let div = document.createElement("div")
         let img = document.createElement("img")
@@ -106,10 +106,10 @@ const itemListCreate = (items, key) => {
         btn.onclick = () => {
             items.splice(i, 1)
             div.remove()
-            updatePriceUi(items)
+            updatePriceUi(productsData)
             title.dataset.count--
             title.textContent = `Items (${title.dataset.count})`
-            if(items.length == 0) msg.textContent = "No Product"
+            if(title.dataset.count == 0) msg.textContent = "No Product"
         }
 
         if(item.discount){
@@ -220,8 +220,9 @@ verify.onclick = () => {
 
         let {data, update} = getOrder()
 
+
         let max = 0;
-        if(data.length) max = data.reduce((a,c) => a.id > c.id ? a.id:c.id).id
+        if(data.length) max = data.reduce((a,c) => a.id > c.id ? a:c).id
         else max = 1000;
         
         ORDER_DATA.id = max+1
@@ -229,6 +230,10 @@ verify.onclick = () => {
         data.push(ORDER_DATA)
 
         update()
+
+        if(isCartProducts){
+            localStorage.removeItem(KEYS.cart)
+        }
 
         let delayFake = Math.floor(Math.random() * (7000 - 2000) + 2000)
         setTimeout(() => {
@@ -246,6 +251,8 @@ verify.onclick = () => {
 
 function initialize(){
     productContainer.innerHTML = ""
+
+    updatePriceUi(productsData)
 
     let count = 0
     for(let page in productsData){
