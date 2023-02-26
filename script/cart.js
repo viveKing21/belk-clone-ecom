@@ -91,7 +91,10 @@ function generateUi(cartItems){
     sellingPrice.textContent = totalPrice.textContent = currency(total_price)
     finalPrice.firstElementChild.textContent = currency(off_price + (off_price * .18))
 
-    if(total_price == off_price) discounts.parentElement.remove()
+    if(total_price == off_price) {
+        discounts.parentElement.remove()
+        finalPrice.lastElementChild.textContent = ""
+    }
     else {
         finalPrice.lastElementChild.textContent = currency(total_price + (total_price * 0.18))
         discounts.textContent = ((1 - off_price / total_price) * 100).toFixed(2) + "%"
