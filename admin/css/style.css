@@ -1,0 +1,49 @@
+.main-container{
+    padding: 15px;
+}
+.empty{
+    font-size: 20px;
+    margin: 0;
+}
+.rows{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.row{
+    display: flex;
+    gap: 15px;
+    height: 40px;
+    font-size: 18px;
+    color: black;
+}
+.row .row-id{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.row > *{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(243 243 243);
+    border-radius: 5px;
+}
+.row .row-content{
+    flex: 1;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    display: flex;
+    gap: 10px;
+}
+.row .row-status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.row .row-status.button:hover{
+    background-color: rgb(226, 226, 226)
+}

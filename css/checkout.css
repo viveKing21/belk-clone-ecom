@@ -1,0 +1,321 @@
+.checkout-container{
+    margin-top: 50px;
+}
+.steps{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.steps .step{
+    padding-bottom: 10px;
+}
+.control{
+    display: flex;
+    justify-content: space-between;
+}
+.control button{
+    height: 40px;
+    width: 100%;
+    max-width: 150px;
+    background-color: #0076be;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.control button:hover{
+    background-color: #0069aa;
+}
+.control button:active{
+    background-color: #005c95;
+}
+.product-container{
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    background-color: rgb(246, 246, 246);
+    padding: 10px;
+    max-height: 50vh;
+}
+.product-container .product{
+    display: flex;
+    border: 1px solid black;
+    background-color: white;
+}
+.product-container .product img{
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+    background-color: white;
+    align-self: center;
+}
+.product-container .product .details{
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.product-container .product .details .title{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.product-container .product .details .price{
+    color: black;
+}
+.product-container .product .details .price span{
+    color: var(--red);
+    font-weight: bold;
+}
+.product-container .product .details .price strike{
+    color: gray;
+}
+.product-container .product .details .discount{
+    color: gray;
+    text-align: left;
+}
+.product-container .product .details .discount::before{
+    content: "Discount ";
+    margin-top: 10px;
+}
+.product-container .product > span{
+    color: red;
+    cursor: pointer;
+    align-self: center;
+    width: 50px;
+    text-align: center;
+}
+.msg{
+    text-align: center;
+    padding: 20px;
+}
+.msg:empty{
+    display: none;
+}
+.msg:not(:empty) ~ *{
+    display: none;
+}
+.cart-details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+.cart-details h3{
+    margin-bottom: 0;
+}
+.cart-details > span{
+    font-size: 15px;
+}
+.cart-details .fp{
+    font-size: 20px;
+    padding: 10px 0;
+    display: flex;
+    gap: 10px;
+}
+.cart-details .fp span{
+    color: var(--red);
+    font-weight: bold;
+}
+.cart-details .fp strike{
+    color: gray;
+    font-style: italic;
+}
+.cart-details .fp > *:empty{
+    display: none;
+}
+.billing-container{
+    margin: auto;
+}
+.billing-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+}
+.billing-container form h4{
+    margin: 0;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+.billing-container form input{
+    height: 40px;
+    margin: 0;
+    padding: 0 10px;
+    border: 2px solid black;
+    outline: none;
+    font-size: 15px;
+    max-height: 300px;
+    width: 100%;
+    max-width: 400px;
+}
+.payment-container{
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.payment-container button {
+    height: 40px;
+    margin-top: 30px;
+    background: #0076be;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    box-shadow: 0px 4px 11px 0px #00000070;
+    cursor: pointer;
+}
+.payment-container .card-type{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    gap: 20px;
+}
+.payment-container img{
+    height: 50px;
+    align-self: flex-end;
+    margin-top: 20px;
+}
+.payment-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.payment-container form input{
+    font-size: 18px;
+    padding: 10px;
+}
+.payment-container form input::-webkit-outer-spin-button,
+.payment-container form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.payment-container form section{
+    display: flex;
+    justify-content: space-between;
+}
+.payment-container form section input{
+    width: 100px;
+}
+.payment-container form section div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.payment-container form section div input{
+    width: 60px;
+    -moz-appearance: textfield;
+}
+.payment-container form section div span{
+    font-size: 30px;
+}
+
+
+/* Modal Desgin */
+.modal{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.33);
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+.modal .close{
+    color: black;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.modal-content{
+    width: 90%;
+    max-width: 400px;
+    max-height: 90%;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal-content:not([loading]) .loader{
+    display: none;
+}
+.modal-content[loading] .loader{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity .5s;
+    pointer-events: none;
+}
+.loader .spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #000000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.otp-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 40vh;
+}
+.otp-page h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.otp-page .otp-box{
+    display: flex;
+    gap: 10px;
+}
+.otp-page .otp-box input{
+    height: 40px;
+    width: 40px;
+    border: 3px solid black;
+    font-size: 30px;
+    text-align: center;
+    outline: none;
+}
+.otp-page button{
+    height: 40px;
+    width: 80%;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    margin: 30px 0;
+    cursor: pointer;
+}
+.otp-page .resend{
+    margin-top: 10px;
+}
+.otp-page .resend div{
+    display: none;
+}
+.otp-page .resend[timer] .timer{
+    display: block;
+}   
+.otp-page .resend:not([timer]) .action{
+    display: block;
+}   

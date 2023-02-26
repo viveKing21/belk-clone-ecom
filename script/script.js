@@ -68,6 +68,7 @@ expandBtns.forEach(btn => {
 let timer = null
 menuItems.forEach(menuBtn => {
     let menuId = menuBtn.getAttribute("menu")
+    
     menuBtn.onmouseenter = (e) => {
         if(innerWidth <= 1000) return
         clearTimeout(timer)
@@ -188,3 +189,31 @@ closeBtnSidebar.onclick = () => {
 sidebar.onclick = (e) => {
     if(e.target === sidebar) closeBtnSidebar.onclick()
 }
+
+
+// HyperLink
+
+let menuLinks = [...menuContainer.children]
+
+menuLinks.forEach(menu => {
+    let page = menu.className.split("-")[1]
+    let lis = menu.querySelectorAll("ul li")
+    
+    lis.forEach(li => {
+        li.onclick = () => {
+            location = "/product.html?page="+page
+        }
+    })
+})
+
+let sidebarLinks = sidebar.querySelectorAll(".sidebar-items > .item")
+
+sidebarLinks.forEach(item => {
+    let anchors = item.querySelectorAll("a")
+
+    let page = item.getAttribute("page")
+    
+    anchors.forEach(a => {
+        a.href = "/product.html?page="+page
+    })
+})

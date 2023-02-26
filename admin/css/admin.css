@@ -1,0 +1,123 @@
+:root{
+    --width: 80rem;
+    --red: #ce0e2d;
+    --border: .5px solid #e4e4e4
+}
+*{
+    box-sizing: border-box;
+}
+[center]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+[hover]:hover{
+    background-color: #00000008;
+}
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    height: 100vh;
+    overflow: hidden;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: 250px calc(100% - 250px);
+}
+.sidebar{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    border-right: var(--border);
+    flex-shrink: 0;
+}
+.header{
+    min-height: 60px;
+    max-height: 60px;
+    border-bottom: var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+}
+.content-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: hidden;
+}
+.content{
+    overflow-y: auto;
+    height: 100%;
+    position: relative;
+}
+.navigations{
+    display: flex;
+    flex-direction: column;
+}
+.navigations .nav{
+    height: 40px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+    border-bottom: var(--border);
+    
+}
+.navigations .nav:hover{
+    background-color: rgb(240, 240, 240);
+}
+.navigations .nav.selected{
+    border-right: 2px solid black;
+}
+.content-container .header{
+    font-size: 20px;
+    text-transform: capitalize;
+    padding: 0 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 766px) {
+    .container{
+        grid-template-columns: 200px calc(100% - 200px);
+    }
+    .row .row-content{
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 0 !important;
+        justify-content: center;
+    }
+    .row .row-content i{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .product-content{
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+@media screen and (max-width: 600px) {
+    .product-content{
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .options{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .options > *{
+        width: 100% !important;
+    }
+    .options input{
+        flex: 1;
+    }
+}
+@media screen and (max-width: 550px) {
+    .product-content{
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}

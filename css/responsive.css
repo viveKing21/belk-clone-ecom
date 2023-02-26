@@ -172,6 +172,12 @@
     .buttons ~ p{
         margin-top: 40px;
     }
+
+    /* product page */
+    
+    :is(.products,.cart-container) .content{
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
 }
 @media only screen and (max-width: 690px){
     .product-slider{
@@ -184,5 +190,24 @@
     }
     .visit .divider{
         display: none;
+    }
+}
+@media only screen and (max-width: 650px){
+
+    /* product page */
+
+    :is(.products,.cart-container) .content{
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    :is(.products,.cart-container) .filter{
+        min-width: 200px;
+    }
+}
+@media only screen and (max-width: 500px){
+    .products .content{
+        grid-template-columns: 1fr !important;
+    }
+    .products .sort{
+        margin-top: 20px;
     }
 }

@@ -1,0 +1,114 @@
+.empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.empty button{
+    background-color: #0076be;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 20px;
+}
+.empty button:last-of-type{
+    color: #0076be;
+    background-color: white;
+    outline: 1px solid #0076be;
+}
+.cart-container{
+    padding: 20px 0;   
+}
+.cart-container .content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+.cart-container .content .card{
+    display: flex;
+    flex-direction: column;
+}
+.cart-container .content .card .img{
+    border: 1px solid rgb(206, 206, 206);
+}
+.cart-container .content .card img{
+    width: 100%;
+    padding: 10px;
+    aspect-ratio: 1/1.35;
+    object-fit: contain;
+}
+.cart-container .content .card .card-title{
+    font-size: 14px;
+    margin: 10px 0;
+    flex: 1;
+}
+.cart-container .content .card .price{
+    font-weight: bold;
+    color: var(--red);
+}
+.cart-container .content .card .price span{
+    color: black;
+}
+.cart-container .content .card strike{
+    color: gray;
+}
+.cart-container .content .card button{
+    height: 25px;
+    margin-top: 10px;
+    background-color: var(--red);
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+.cart-container .content .card button:hover{
+    opacity: .8;
+}
+.cart-details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+.cart-details h3{
+    margin-bottom: 0;
+}
+.cart-details > span{
+    font-size: 15px;
+}
+.cart-details .fp{
+    font-size: 20px;
+    padding: 10px 0;
+    display: flex;
+    gap: 10px;
+}
+.cart-details .fp span{
+    color: var(--red);
+    font-weight: bold;
+}
+.cart-details .fp strike{
+    color: gray;
+    font-style: italic;
+}
+.cart-details .fp > *:empty{
+    display: none;
+}
+.cart-details button{
+    height: 40px;
+    width: 100%;
+    max-width: 200px;
+    background-color: var(--red);
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+.cart-details button:hover{
+    opacity: .9;
+}

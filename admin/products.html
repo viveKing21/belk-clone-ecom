@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyOnline - Admin</title>
+    <link rel="shortcut icon" href="/assets/logo.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+    <script src="script/main.js" defer></script>
+    <script src="script/product.js" type="module" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="header">
+                <!-- sidebar header -->
+            </div>
+            <div class="navigations">
+                <div class="nav" path="users.html">
+                    <span class="material-symbols-outlined">person</span>
+                    <span>Users</span>
+                </div>
+                <div class="nav" path="products.html?page=gift">
+                    <span class="material-symbols-outlined">widgets</span>
+                    <span>Products</span>
+                </div>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="header">
+                <!-- main header -->
+            </div>
+            <div class="content">
+                <div class="main-container" >
+                    <div class="page-list">
+                        <a href="?page=gift" class="page">
+                            Gift
+                        </a>
+                        <a href="?page=women" class="page">
+                            Women
+                        </a>
+                        <a href="?page=men" class="page">
+                            Men
+                        </a>
+                        <a href="?page=kid" class="page">
+                            Kid
+                        </a>
+                        <a href="?page=shoe" class="page">
+                            Shoe
+                        </a>
+                        <a href="?page=handbag" class="page">
+                            Handbags
+                        </a>
+                        <a href="?page=jewelry" class="page">
+                            Jewelry
+                        </a>
+                        <a href="?page=beauty" class="page">
+                            Beauty
+                        </a>
+                        <a href="?page=home" class="page">
+                            Home
+                        </a>
+                        <a href="?page=bed_bath" class="page">
+                            Bed & Bath
+                        </a>
+                        <a href="?page=conn" class="page">
+                            Conn's B.O.
+                        </a>
+                        <a href="?page=brand" class="page">
+                            Brands
+                        </a>
+                        <a href="?page=clearance" class="page">
+                            Clearance
+                        </a>
+                    </div>
+                    <div class="title"></div>
+                    <div class="options">
+                        <div class="search">
+                            <input type="text" placeholder="Search Product">
+                            <span class="material-symbols-outlined">search</span>
+                        </div>
+                        <div class="sort">
+                            <select>
+                                <option value="">Sort (Default)</option>
+                                <option value="htl">High to Low</option>
+                                <option value="lth">Low to High</option>
+                                <option value="off">Discounts</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="clear-search"></div>
+                    <div class="product-content"></div>
+                    <center>
+                        <br>
+                        <br>
+                        <b class="empty" hidden>No Product Found</b>
+                        <br>
+                        <br>
+                    </center>
+                    <div class="add-product-btn" center>
+                        <span class="material-symbols-outlined">add</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" hidden>
+            <div class="modal-content">
+                <span class="close material-symbols-outlined" onclick="modal.hidden=true; event.stopPropagation()">close</span>
+                <form id="add-to-cart">
+                    <h2>Product Details</h2>
+                    <input type="text" name="name" required placeholder="Name">
+                    <input type="text" name="image" required placeholder="Image">
+                    <input type="number" name="price" required min="0" max="10000000000" placeholder="Price">
+                    <input type="number" name="discount" min="1" max="100" placeholder="Discounts (1-100) (Optional)">
+                    <h2>Specs</h2>
+                    <select name="color">
+                        <option value="*" selected disabled hidden>Select Color (Optional)</option>
+                        <option value="*">All</option>
+                    </select>
+                    <select name="gender">
+                        <option value="*" selected disabled hidden>Select Gender (Optional)</option>
+                        <option value="*">All</option>
+                        <option value="girls">Girls</option>
+                        <option value="boys">Boys</option>
+                        <option value="neutral">Neutral</option>
+                        <option value="women">Women</option>
+                        <option value="men">Men</option>
+                    </select>
+                    <input type="text" name="brand" list="brands" required placeholder="Brand">
+                    <datalist id="brands">
+                        <option value="xyz"></option>
+                    </datalist>
+                    <input type="submit" value="Add Product">
+                </form>
+                <div class="loader" center>
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // authentication
+    let admin = sessionStorage.getItem("admin")
+
+    if(admin == null) requestLogin()
+
+    function requestLogin(){
+        if(prompt("Usersname") == "admin" && prompt("Password") == "admin@123") {
+            sessionStorage.setItem("admin", true)
+        }
+        else{
+            location = "/"
+        }
+    }
+
+    
+    let addProductFormBtn = document.querySelector(".add-product-btn")
+    let modal = document.querySelector(".modal")
+
+    addProductFormBtn.onclick = () => {
+        modal.hidden = false
+    }
+    modal.onclick = (e) => {
+        modal.hidden = e.target == modal
+    }
+
+    // colors
+    const COLORS100 = ["Alice blue","Antique white","Aqua","Aquamarine","Azure","Beige","Bisque","Black","Blanched almond","Blue","Blue violet","Brown","Burlywood","Cadet blue","Chartreuse","Chocolate","Coral","Cornflower blue","Cornsilk","Crimson","Cyan","Dark blue","Dark cyan","Dark goldenrod","Dark gray","Dark green","Dark khaki","Dark magenta","Dark olive green","Dark orange","Dark orchid","Dark red","Dark salmon","Dark seagreen","Dark slate blue","Dark slate gray","Dark turquoise","Dark violet","Deep pink","Deep sky blue","Dim gray","Dodger blue","Firebrick","Floral white","Forest green","Fuchsia","Gainsboro","Ghost white","Gold","Goldenrod","Gray","Green","Green yellow","Honeydew","Hot pink","Indian red","Indigo","Ivory","Khaki","Lavender","Lavender blush","Lawn green","Lemon chiffon","Light blue","Light coral","Light cyan","Light goldenrod yellow","Light green","Light grey","Light pink","Light salmon","Light sea green","Light sky blue","Light slate gray","Light steel blue","Light yellow","Lime","Lime green","Linen","Magenta","Maroon","Medium aquamarine","Medium blue","Medium orchid","Medium purple","Medium sea green","Medium slate blue","Medium spring green","Medium turquoise","Medium violet red","Midnight blue","Mint cream","Misty rose","Moccasin","Navajo white","Navy","Old lace","Olive drab","Orange","Orange red"]
+    
+    let form = document.getElementById("add-to-cart")
+
+    COLORS100.forEach(color => {
+        let option = document.createElement("option")
+        option.value = color.replaceAll(" ", "").toLowerCase()
+        option.textContent = color
+        form.color.append(option)
+    })
+
+</script>
+</html>

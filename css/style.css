@@ -361,7 +361,7 @@ nav .icon.cart[data-item]::after{
 .menu .menu-container[show=home] .menu-home,
 .menu .menu-container[show=bed_bath] .menu-bed_bath,
 .menu .menu-container[show=conn] .menu-conn,
-.menu .menu-container[show=brands] .menu-brands,
+.menu .menu-container[show=brand] .menu-brand,
 .menu .menu-container[show=clearance] .menu-clearance{
     display: grid;
 }
