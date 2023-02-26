@@ -1,77 +1,124 @@
+
+// localstorage
 export const KEYS = {
     user: "users",
     loggedIn: "logged_in",
-    cart: "cart"
+    cart: "cart",
+    product: "products",
+    order: "orders"
 }
 
 export const getUser = (email) => {
-    if(window.users == undefined){
-        window.users = JSON.parse(localStorage.getItem(KEYS.user)) || []
-    }
-    return email ? window.users.find(user => user.em == email):window.users
-}
-
-export const isLoggedIn = () => {
-    if(window.sessionId == undefined){
-        let sessionId = localStorage.getItem(KEYS.loggedIn)
-        if(sessionId){
-            try{
-                let user = getUser(atob(sessionId) + "@gmail.com")
-                if(user) window.sessionId = sessionId
-                else throw "Session Dosen't match";
+    let users = JSON.parse(localStorage.getItem(KEYS.user)) || []
+    return {
+        data: email ? users.find(user => user.em == email):users,
+        update(data = users){
+            if(data){
+                if(data.length){
+                    localStorage.setItem(KEYS.user, JSON.stringify(data))
+                    return
+                }
             }
-            catch(e){
-                localStorage.removeItem(KEYS.loggedIn)
-            }
+            localStorage.removeItem(KEYS.user)
         }
-    }
-    return Boolean(window.sessionId)
+    } 
+}
+export const getCurrentUser = () => {
+    return {
+        data: getUser(atob(auth()) + "@gmail.com").data
+    } 
 }
 
-export const getProduct = async (id, pageName) => {
-    let path = ''
 
-    if(pageName == null){
-        let query = new URLSearchParams(location.search)
-        path = `/data/${query.get("page")}.json`;
-    }
-    else{
-        path = `/data/${pageName}.json`;
-    }
-    
-    if(window.products == undefined){
+export const auth = () => {
+    let sessionId = localStorage.getItem(KEYS.loggedIn)
+    if(sessionId){
         try{
-            let load = await import(path, { assert: { type: "json" }})
-            window.products = load.default
+            let { data } = getUser(atob(sessionId) + "@gmail.com")
+            if(data && data.st == 1) return sessionId
+            else throw "Session Dosen't match";
         }
         catch(e){
-            throw e
+            localStorage.removeItem(KEYS.loggedIn)
         }
     }
-    return Promise.resolve(id ? window.products.find(p => p.id == id):window.products)
+    return null
 }
 
-export const getCart = async () => {
-    if(window.carts == undefined){
-        let carts = JSON.parse(localStorage.getItem(KEYS.cart))
-        if(carts) window.carts = carts
+// async
+export const getProduct = async (id, pageName) => {
+    if(pageName == null){
+        let query = new URLSearchParams(location.search)
+        pageName = query.get("page")
     }
-    return window.carts
+
+    let products = JSON.parse(localStorage.getItem(KEYS.product))
+
+    if(products == null){
+        // fetch demo data
+        let load = await import('/data/demo.json', { assert: { type: "json" }})
+        products = load.default
+        localStorage.setItem(KEYS.product, JSON.stringify(products))
+    }
+    products = products[pageName]
+    return {
+        data: id ? products.find(p => p.id == id):products
+    }
 }
 
-export const getCartItems = async () => {
-    if(window.cartItems == undefined){
-        window.cartItems = {}
-        let carts = await getCart()
+export const getCart = () => {
+    let carts = JSON.parse(localStorage.getItem(KEYS.cart))
     
-        for(let pageName in carts){
-            let products = await getProduct(null, pageName)
-            products = products.filter(product => carts[pageName].includes(product.id))
-            
-            if(products.length){
-                window.cartItems[pageName] = products
+    return {
+        data: carts,
+        update(data = carts){
+            if(data){
+                if(Object.keys(data).length){
+                    localStorage.setItem(KEYS.cart, JSON.stringify(data))
+                    return
+                }
             }
+            localStorage.removeItem(KEYS.cart)
         }
     }
-    return window.cartItems
+}
+
+export const getOrder = (id) => {
+    let orders = JSON.parse(localStorage.getItem(KEYS.order)) || []
+    
+    return {
+        data: id ? orders.find(order => order.id == id):orders,
+        update(data = orders){
+            if(data && data.length){
+                localStorage.setItem(KEYS.order, JSON.stringify(data))
+                return
+            }
+            localStorage.removeItem(KEYS.order)
+        }
+    }
+}
+
+// dependent utility (getCart & getProduct)
+export const getCartItems = async () => {
+    let cartItems;
+
+    let { data } = getCart()
+    
+    for(let pageName in data){
+        let {data: products} = await getProduct(null, pageName)
+        products = products.filter(product => data[pageName].includes(product.id))
+        
+        if(products.length){
+            if(cartItems == undefined) cartItems = {}
+            cartItems[pageName] = products
+        }
+    }
+    return { data: cartItems }
+}
+
+export const currency = (value, type = "USD") => {
+    return value.toLocaleString('en-US', {
+        style: 'currency',
+        currency: type,
+    })
 }

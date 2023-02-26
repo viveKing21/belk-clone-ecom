@@ -18,7 +18,8 @@
         .box-container form{
             display: flex;
             flex-direction: column;
-            width: 400px;
+            width: 90%;
+            max-width: 400px;
             gap: 20px;
             margin: auto;
             margin-top: 20px;
@@ -108,14 +109,16 @@
                         </div>
                     </div>
                     <div class="icon cart">
-                        <div class="ico">
-                            <span class="material-symbols-outlined">
-                                shopping_bag
+                        <a href="/cart.html" style="text-decoration: none;color: black;">
+                            <div class="ico">
+                                <span class="material-symbols-outlined">
+                                    shopping_bag
                                 </span>
-                        </div>
-                        <div class="text">
-                             Bag
-                        </div>
+                            </div>
+                            <div class="text">
+                                Bag
+                            </div>
+                        </a>
                     </div>
                 </nav>
                 <div class="tooltip-container">
@@ -174,7 +177,7 @@
                             <li menu="home">Home</li>
                             <li menu="bed_bath">Bed & Bath</li>
                             <li menu="conn">Conn's B.O.</li>
-                            <li menu="brands">Brands</li>
+                            <li menu="brand">Brands</li>
                             <li menu="clearance" style="color: var(--red)">Clearance</li>
                         </ul>
                         <div class="button">
@@ -1052,7 +1055,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="menu-brands">
+                        <div class="menu-brand">
                             <div>
                                 <h3>Brands</h3>
                                 <ul>
@@ -1164,7 +1167,7 @@
                 </div>
                 <div class="content">
                     <div class="sidebar-items">
-                        <div class="item">
+                        <div class="item" page="gift">
                             <div class="item-heading">
                                 <div class="text">Gifts</div>
                                 <span class="material-symbols-outlined">add</span>
@@ -1263,7 +1266,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="women">
                             <div class="item-heading">
                                 <div class="text">Women</div>
                                 <span class="material-symbols-outlined">add</span>
@@ -1379,7 +1382,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="men">
                             <div class="item-heading">
                                 <div class="text">Men</div>
                                 <span class="material-symbols-outlined">add</span>
@@ -1491,7 +1494,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="kids">
                             <div class="item-heading">
                                 <div class="text">Kids</div>
                                 <span class="material-symbols-outlined">add</span>
@@ -1601,7 +1604,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="shoes">
                             <div class="item-heading">
                                 <div class="text">Shoes</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -1702,7 +1705,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="handbag">
                             <div class="item-heading">
                                 <div class="text">Handbags</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -1814,7 +1817,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="jewelry">
                             <div class="item-heading">
                                 <div class="text">Jewelry</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -1923,7 +1926,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="beauty">
                             <div class="item-heading">
                                 <div class="text">Beauty</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -2069,7 +2072,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="home">
                             <div class="item-heading">
                                 <div class="text">Home</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -2195,7 +2198,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="bed_bath">
                             <div class="item-heading">
                                 <div class="text">Bed & Bath</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -2337,7 +2340,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="conn">
                             <div class="item-heading">
                                 <div class="text">Conn's x Belk</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -2409,7 +2412,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="brand">
                             <div class="item-heading">
                                 <div class="text">Brands</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -2503,7 +2506,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="clearance">
                             <div class="item-heading">
                                 <div class="text" style="color: var(--red);">Clearance</div>
                             </div>

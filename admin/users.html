@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyOnline - Admin</title>
+    <link rel="shortcut icon" href="/assets/logo.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/main.js" defer></script>
+    <script src="script/users.js" type="module" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="header">
+                <!-- sidebar header -->
+            </div>
+            <div class="navigations">
+                <div class="nav selected" path="users.html">
+                    <span class="material-symbols-outlined">person</span>
+                    <span>Users</span>
+                </div>
+                <div class="nav" path="products.html?page=gift">
+                    <span class="material-symbols-outlined">widgets</span>
+                    <span>Products</span>
+                </div>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="header">
+                <!-- main header -->
+            </div>
+            <div class="content">
+                <div class="main-container" >
+                    <b class="empty" hidden>No User Found</b>
+                    <div class="rows">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // authentication
+    let admin = sessionStorage.getItem("admin")
+
+    if(admin == null) requestLogin()
+
+    function requestLogin(){
+        if(prompt("Usersname") == "admin" && prompt("Password") == "admin@123") {
+            sessionStorage.setItem("admin", true)
+        }
+        else{
+            location = "/"
+        }
+    }
+</script>
+</html>

@@ -131,6 +131,8 @@
 .products .content .card img{
     width: 100%;
     padding: 10px;
+    aspect-ratio: 1/1.35;
+    object-fit: contain;
 }
 .products .content .card .card-title{
     font-size: 14px;

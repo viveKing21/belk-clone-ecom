@@ -1,4 +1,4 @@
-import { KEYS, getProduct, isLoggedIn, getCart } from "./control.js"
+import { KEYS, getProduct, auth, getCart } from "./control.js"
 
 let cartCount = document.querySelector("nav .cart")
 
@@ -32,53 +32,46 @@ const createCard = (item) => {
     pic.src = item.images[0]
     cardTitle.textContent = item.title
     
+    addBtn.textContent = "Add to Cart"
     buyBtn.textContent = "Buy Now"
     
-    if(isLoggedIn()){
-        getCart()
-        .then(cart => cart && cart[query.get("page")])
-        .then(carts => {
-            if(carts?.includes(item.id)) {
+    if(auth()){
+        let {data} = getCart()
+        if(data && data[query.get("page")]?.includes(item.id)) {
+            addBtn.textContent = "Remove to Cart"
+        }
+    }
+    addBtn.onclick = () => {
+        if(auth()){
+            let {data, update} = getCart()
+            let cart = data || {};
+            let list = cart[query.get("page")] || []
+
+            if(cartCount.dataset.item == null) cartCount.dataset.item = 0
+
+            if(list.includes(item.id) == false){
+                list.push(item.id)
+                cart[query.get("page")] = list
+                cartCount.dataset.item++
                 addBtn.textContent = "Remove to Cart"
             }
             else{
-                addBtn.textContent = "Add to Cart"
-            }
-        })
-    }
-    addBtn.onclick = () => {
-        if(isLoggedIn()){
-            getCart()
-            .then(cart => {
-                cart = cart || {};
-                let list = cart[query.get("page")] || []
-
-                if(cartCount.dataset.item == null) cartCount.dataset.item = 0
-
-                if(list.includes(item.id) == false){
-                    list.push(item.id)
-                    cart[query.get("page")] = list
-                    cartCount.dataset.item++
-                    addBtn.textContent = "Remove to Cart"
+                list = list.filter(id => id != item.id)
+                if(list.length == 0){
+                    delete cart[query.get("page")]
+                    delete cartCount.dataset.item
+                    
+                    if(Object.keys(cart).length == 0) {
+                        localStorage.removeItem(KEYS.cart)
+                    }
                 }
                 else{
-                    list = list.filter(id => id != item.id)
-                    if(list.length == 0){
-                        delete cart[query.get("page")]
-                        delete cartCount.dataset.item
-                        
-                        if(Object.keys(cart).length == 0) {
-                            localStorage.removeItem(KEYS.cart)
-                        }
-                    }
-                    else{
-                        cart[query.get("page")] = list
-                        cartCount.dataset.item--
-                    }
-                    addBtn.textContent = "Add to Cart"
+                    cart[query.get("page")] = list
+                    cartCount.dataset.item--
                 }
-                localStorage.setItem(KEYS.cart, JSON.stringify(cart))
-            })
+                addBtn.textContent = "Add to Cart"
+            }
+            update(cart)
         }
         else{
             location = "/signin.html"
@@ -219,10 +212,10 @@ const generateUi = (items) => {
 }
 
 getProduct()
-.then(items => {
-    productData = items
-    generateUi(items)
-    createFilter(items)
+.then(({data}) => {
+    productData = data
+    generateUi(data)
+    createFilter(data)
 })
 .catch(error => {
     document.querySelector(".product-container").innerHTML = "<h3>Not Product Found.</h3>"
@@ -230,7 +223,7 @@ getProduct()
 
 sort.onchange = () => {
     getProduct()
-    .then(data => [...data])
+    .then(({data}) => [...data])
     .then(shallowData => {
         if(sort.value == "htl"){
             shallowData.sort((a, b) => {

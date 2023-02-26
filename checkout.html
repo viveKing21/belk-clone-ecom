@@ -12,15 +12,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/responsive.css">
-    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/checkout.css">
     <script src="/script/script.js" defer></script>
     <script src="/script/main.js" type="module" defer></script>
-    <script src="/script/product.js" type="module" defer></script>
+    <script src="/script/checkout.js" type="module" defer></script>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <div class="navbar">
+                <div class="offer">
+                    <div class="tiles">
+                        Online & In-Stoe <b>Up to 40%*</b> select brands <a href="">Get Coupon</a>
+                    </div>
+                    <a href="">Enable Accessibility</a>
+                </div>
                 <nav class="box-container">
                     <div class="bar">
                         <span class="material-symbols-outlined">menu</span>
@@ -62,14 +68,16 @@
                         </div>
                     </div>
                     <div class="icon cart">
-                        <div class="ico">
-                            <span class="material-symbols-outlined">
-                                shopping_bag
+                        <a href="/cart.html" style="text-decoration: none;color: black;">
+                            <div class="ico">
+                                <span class="material-symbols-outlined">
+                                    shopping_bag
                                 </span>
-                        </div>
-                        <div class="text">
-                             Bag
-                        </div>
+                            </div>
+                            <div class="text">
+                                Bag
+                            </div>
+                        </a>
                     </div>
                 </nav>
                 <div class="tooltip-container">
@@ -128,7 +136,7 @@
                             <li menu="home">Home</li>
                             <li menu="bed_bath">Bed & Bath</li>
                             <li menu="conn">Conn's B.O.</li>
-                            <li menu="brands">Brands</li>
+                            <li menu="brand">Brands</li>
                             <li menu="clearance" style="color: var(--red)">Clearance</li>
                         </ul>
                         <div class="button">
@@ -1006,7 +1014,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="menu-brands">
+                        <div class="menu-brand">
                             <div>
                                 <h3>Brands</h3>
                                 <ul>
@@ -1118,7 +1126,7 @@
                 </div>
                 <div class="content">
                     <div class="sidebar-items">
-                        <div class="item">
+                        <div class="item" page="gift">
                             <div class="item-heading">
                                 <div class="text">Gifts</div>
                                 <span class="material-symbols-outlined">add</span>
@@ -1217,7 +1225,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="women">
                             <div class="item-heading">
                                 <div class="text">Women</div>
                                 <span class="material-symbols-outlined">add</span>
@@ -1333,7 +1341,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="men">
                             <div class="item-heading">
                                 <div class="text">Men</div>
                                 <span class="material-symbols-outlined">add</span>
@@ -1445,7 +1453,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="kids">
                             <div class="item-heading">
                                 <div class="text">Kids</div>
                                 <span class="material-symbols-outlined">add</span>
@@ -1555,7 +1563,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="shoes">
                             <div class="item-heading">
                                 <div class="text">Shoes</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -1656,7 +1664,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="handbag">
                             <div class="item-heading">
                                 <div class="text">Handbags</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -1768,7 +1776,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="jewelry">
                             <div class="item-heading">
                                 <div class="text">Jewelry</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -1877,7 +1885,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="beauty">
                             <div class="item-heading">
                                 <div class="text">Beauty</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -2023,7 +2031,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="home">
                             <div class="item-heading">
                                 <div class="text">Home</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -2149,7 +2157,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="bed_bath">
                             <div class="item-heading">
                                 <div class="text">Bed & Bath</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -2291,7 +2299,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="conn">
                             <div class="item-heading">
                                 <div class="text">Conn's x Belk</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -2363,7 +2371,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="brand">
                             <div class="item-heading">
                                 <div class="text">Brands</div> <span class="material-symbols-outlined">add</span>
                             </div>
@@ -2457,7 +2465,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="item">
+                        <div class="item" page="clearance">
                             <div class="item-heading">
                                 <div class="text" style="color: var(--red);">Clearance</div>
                             </div>
@@ -2486,150 +2494,71 @@
                 </div>
             </div>
         </div>
-        <div class="box-container product-container">
-            <div class="filter">
-                <div class="title">Filter</div>
-                <ul>
-                    <li>
-                        <div class="text">
-                            Color
-                            <label for="filter-color">
-                                <span class="material-symbols-outlined">expand_more</span>
-                            </label>
+        <div class="box-container">
+            <div class="checkout-container">
+                <h2>Checkout</h2>
+                <h2 class="msg"></h2>
+                <h3>Items <span>(1)</span></h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="product-container"></div>
+                        <div class="cart-details">
+                            <h3>Total Price <span class="t-p">$246.00</span></h3>
+                            <i>Selling Price <span class="s-p">$246.00</span></i>
+                            <i>+ GST Added 18%</i>
+                            <i class="discounts">- Discount <span class="d">1.30%</span></i>
+                            <div class="fp">
+                                <span>$286.50</span><strike>$290.28</strike>
+                            </div>
                         </div>
-                        <input type="checkbox" id="filter-color">
-                        <div class="colors"></div>
-                    </li>
-                    <li>
-                        <div class="text">
-                            Gender
-                            <label for="filter-gender">
-                                <span class="material-symbols-outlined">expand_more</span>
-                            </label>
+                    </div>
+                    <div class="step" hidden>
+                        <div class="billing-container">
+                            <form>
+                                <h4>Personal Details</h4>
+                                <input type="text" name="name" required placeholder="Full Name">
+                                <input type="email" name="email" required placeholder="Email">
+                                <input type="text" name="mobile" required placeholder="Mobile (eg +1 00000000)">
+                                <h4>Residential Details</h4>
+                                <input type="text" name="house" required placeholder="House No">
+                                <input type="text" name="street" required placeholder="Street Landmark Local">
+                                <input type="text" name="city" required placeholder="City">
+                                <input type="text" name="state" required placeholder="State">
+                                <input type="text" name="zipcode" required placeholder="Zipcode">
+                            </form>
                         </div>
-                        <input type="checkbox" id="filter-gender">
-                        <div class="genders"></div>
-                    </li>
-                    <li>
-                        <div class="text">
-                            Brand
-                            <label for="filter-brand">
-                                <span class="material-symbols-outlined">expand_more</span>
-                            </label>
+                    </div>
+                    <div class="step" hidden>
+                        <div class="payment-container">
+                            <h4>Pay using Card Only</h4>
+                            <form id="payment-form">
+                                <div class="card-type">
+                                    <label>
+                                        Debit
+                                        <input type="radio" required name="type">
+                                    </label>
+                                    <label>
+                                        Credit
+                                        <input type="radio" required name="type">
+                                    </label>
+                                </div>
+                                <input type="number" required name="account_number" min="1000000000000" max="1000000000000000000" placeholder="Account Number">
+                                <section>
+                                    <input type="text" required placeholder="CVV" min="3" max="3">
+                                    <div class="date">
+                                        <input type="number" required name="expiry_month" id="month" min="1" max="12" placeholder="MM"><span>/</span>
+                                        <input type="number" required name="expiry_year" id="year" min="23" max="45" placeholder="YY">
+                                    </div>
+                                </section>
+                            </form>
+                            <img src="https://www.freepnglogos.com/uploads/visa-and-mastercard-logo-26.png" alt="">
+                            <button type="submit" form="payment-form">Continue</button>
                         </div>
-                        <input type="checkbox" id="filter-brand">
-                        <div class="brands"></div>
-                    </li>
-                </ul>
-            </div>
-            <div class="products">
-                <div class="title">Demo (1105)</div>
-                <div class="sort">
-                    Sort
-                    <select>
-                        <option>All</option>
-                        <option value="htl">Price: High to Low</option>
-                        <option value="lth">Price: Low to High</option>
-                        <option value="off">Discounts</option>
-                    </select>
+                    </div>
                 </div>
-                <div class="content">
-                    <div class="card">
-                        <div class="img">
-                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
-                        </div>
-                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
-                        <div class="price">
-                            $50 <span>After Coupon</span>
-                        </div>
-                        <strike>$72.00</strike>
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
-                    <div class="card">
-                        <div class="img">
-                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
-                        </div>
-                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
-                        <div class="price">
-                            $50 <span>After Coupon</span>
-                        </div>
-                        <strike>$72.00</strike>
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
-                    <div class="card">
-                        <div class="img">
-                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
-                        </div>
-                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
-                        <div class="price">
-                            $50 <span>After Coupon</span>
-                        </div>
-                        <strike>$72.00</strike>
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
-                    <div class="card">
-                        <div class="img">
-                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
-                        </div>
-                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
-                        <div class="price">
-                            $50 <span>After Coupon</span>
-                        </div>
-                        <strike>$72.00</strike>
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
-                    <div class="card">
-                        <div class="img">
-                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
-                        </div>
-                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
-                        <div class="price">
-                            $50 <span>After Coupon</span>
-                        </div>
-                        <strike>$72.00</strike>
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
-                    <div class="card">
-                        <div class="img">
-                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
-                        </div>
-                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
-                        <div class="price">
-                            $50 <span>After Coupon</span>
-                        </div>
-                        <strike>$72.00</strike>
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
-                    <div class="card">
-                        <div class="img">
-                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
-                        </div>
-                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
-                        <div class="price">
-                            $50 <span>After Coupon</span>
-                        </div>
-                        <strike>$72.00</strike>
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
-                    <div class="card">
-                        <div class="img">
-                            <img src="https://belk.scene7.com/is/image/Belk?layer=0&src=1804321_R0196067GRL_B_960&layer=comp&$DWP_PRODUCT_PLP_DESKTOP_t1$" alt="">
-                        </div>
-                        <div class="card-title">24seven Comfort Apparel Green Floral Cold Shoulder Flowy Casual Maxi Dress</div>
-                        <div class="price">
-                            $50 <span>After Coupon</span>
-                        </div>
-                        <strike>$72.00</strike>
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
+                <div class="control">
+                    <button class="prev" style="visibility: hidden;">Prev</button>
+                    <button class="next">Next</button>
                 </div>
             </div>
         </div>
@@ -2693,5 +2622,63 @@
             </div>
         </div>
     </div>
+    <div class="modal" hidden>
+        <div class="modal-content">
+            <span class="close material-symbols-outlined" onclick="closeModal()">close</span>
+            <div class="otp-page">
+                <h3>We have sent you an OTP</h3>
+                <p>
+                    Enter the OTP you received to continue the payment 
+                </p>
+                <div class="otp-box">
+                    <input type="text" placeholder="0">
+                    <input type="text" placeholder="0">
+                    <input type="text" placeholder="0">
+                    <input type="text" placeholder="0">
+                </div>
+                <div class="resend" action>
+                    <div class="action">Didn't get OTP ? <b style="cursor: pointer;">Resend</b></div>
+                    <div class="timer">Can resend after <b>30s</b></div>
+                </div>
+                <button>Verify</button>
+            </div>
+            <div class="loader" center>
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
 </body>
+<script>
+    let modal = document.querySelector(".modal")
+    let otpInputs = document.querySelectorAll(".otp-box input")
+    
+    function closeModal(e){
+        if(confirm("Are you sure this will reset the page?")) location.reload()
+        event.stopPropagation()
+    }
+
+    modal.onclick = (e) => {
+        if(e.target == modal && confirm("Are you sure this will reset the page?")){
+            location.reload()
+        }
+    }
+
+    otpInputs.forEach((input, i) => {
+        input.onkeypress= (e) => {
+            let number = +(+e.key)
+            if(!isNaN(number)) {
+                input.value = number
+                otpInputs[i+1]?.focus()
+            }
+            e.preventDefault()
+        }
+        input.onkeydown = e => {
+            if(e.key == "Backspace"){
+                input.value = ""
+                otpInputs[i-1]?.focus()
+                e.preventDefault()
+            }
+        }
+    })
+</script>
 </html>

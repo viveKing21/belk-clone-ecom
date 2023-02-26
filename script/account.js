@@ -1,6 +1,6 @@
-import { KEYS, getUser, isLoggedIn } from "./control.js";
+import { KEYS, getUser, auth } from "./control.js";
 
-if(isLoggedIn()){
+if(auth()){
     location = "/"
 }
 
@@ -20,7 +20,8 @@ if(signUpForm){
                 fn: signUpForm.fname.value,
                 ln: signUpForm.lname.value,
                 em: signUpForm.email.value,
-                ps: signUpForm.password.value
+                ps: signUpForm.password.value,
+                st: 1
             }
             let allUsers = getUser()
             allUsers.push(userData)
@@ -44,13 +45,18 @@ if(signInForm){
     signInForm.onsubmit = (e) => {
         e.preventDefault()
 
-        let user = getUser(signInForm.email.value)
+        let { data } = getUser(signInForm.email.value)
 
-        if(user){
-            if(user.ps == signInForm.password.value){
-                let userId = user.em.split("@")[0]
-                localStorage.setItem(KEYS.loggedIn, btoa(userId))
-                location.href = "/"
+        if(data){
+            if(data.ps == signInForm.password.value){
+                if(data.st == -1){
+                    error.textContent = "You're blacklisted by Admin"
+                }
+                else{
+                    let userId = data.em.split("@")[0]
+                    localStorage.setItem(KEYS.loggedIn, btoa(userId))
+                    location.href = "/"
+                }
             }
             else{
                 error.textContent = "Password does not match"

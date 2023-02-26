@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Online - Official</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="/script/receipt.js" type="module" defer></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        [center]{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body{
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 30px;
+        }
+        .page{
+            max-width: 1000px;
+            box-shadow: 0 0 17px 0px #00000078;
+            padding: 40px;
+            position: relative;
+        }
+        #order-id{
+            color: gray;
+            position: absolute;
+            right: 20px;
+            top: 0;
+            font-weight: 100;
+        }
+        #billing-address{
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-rows: repeat(4, auto);
+            grid-template-columns: auto auto;
+            width: fit-content;
+            border: 1px solid rgb(216, 216, 216);
+        }
+        #billing-address .th{
+            font-weight: bold;
+            border: 1px solid rgb(216, 216, 216);
+            padding: 10px;
+        }
+        #billing-address .th::after{
+            content: ":";
+        }
+        #billing-address .td{
+            padding-left: 20px;
+            border: 1px solid rgb(216, 216, 216);
+            padding: 10px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        table :is(th, td){
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" center>
+        <button onclick="print()">Print</button>
+        <br>
+        <div class="page">
+            <h1>Invoice</h1>
+            <h3 id="order-id">Order ID <span>#1001</span></h3>
+            <h3>Billing Address</h3>
+            <div id="billing-address">
+                <div class="th">Name</div>
+                <div class="th">Email</div>
+                <div class="th">Mobile</div>
+                <div class="th">Address</div>
+                <div class="td name"></div>
+                <div class="td email"></div>
+                <div class="td mobile"></div>
+                <div class="td address"></div>
+            </div>
+            <br>
+            <h3>Items</h3>
+            <table border="1">
+                <thead>
+                    <th>S.N</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Tax Rate</th>
+                    <th>Tax Type</th>
+                    <th>Tax Amount</th>
+                    <th>Total</th>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <br>
+            <br>
+            <p style="text-align: center; color: grey;
+            font-size: 12px;max-width: 500px;margin:auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias totam, saepe ut nisi, commodi quidem praesentium amet corporis porro maxime quam voluptas dolor error maiores placeat odio, aliquam explicabo nulla.</p>
+        </div>
+    </div>
+</body>
+</html>
