@@ -234,8 +234,16 @@ verify.onclick = () => {
 
         update()
 
-        if(isCartProducts){
-            localStorage.removeItem(KEYS.cart)
+        let {data: carts, update: updateCart} = getCart()
+
+        // remove from cart
+        if(carts){
+            for(let page in ORDER_DATA.items){
+                if(carts[page]){
+                    carts[page] = carts[page].filter(id => ORDER_DATA.items[page].includes(id) == false)
+                    updateCart()
+                }
+            }
         }
 
         let delayFake = Math.floor(Math.random() * (7000 - 2000) + 2000)
