@@ -1,4 +1,4 @@
-import { auth, currency, getCartItems, getCurrentUser, getOrder, getProduct, KEYS } from "./control.js"
+import { auth, currency, getCartItems, getCart, getCurrentUser, getOrder, getProduct, KEYS } from "./control.js"
 
 if(auth() == null){
     location = "/signin.html"
