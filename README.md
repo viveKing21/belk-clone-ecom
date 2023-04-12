@@ -1,5 +1,5 @@
-# FirstCry Clone - Ecommerce Website
-This is a clone of the popular ecommerce website FirstCry.com. The website provides a platform for parents to purchase a wide range of products for their babies and kids. Our clone includes many of the same features and functionalities found on the original website, including the ability to browse and search for products, add products to a shopping cart, and checkout.
+# Belk Clone - Ecommerce Website
+This is a clone of the popular ecommerce website Belk.com. The website provides a platform for users to purchase a wide range of products including clothing, shoes, accessories, beauty products, and home décor. Our clone includes many of the same features and functionalities found on the original website, including the ability to browse and search for products, add products to a shopping cart, and checkout.
 
 # Technologies Used
 HTML
@@ -9,11 +9,11 @@ CSS
 JavaScript
 
 # Installation
-Clone the repository to your local machine using git clone https://github.com/username/firstcry-clone.git
-Create a database on your local MySQL server
-Import the firstcry.sql file into your newly created database
-Open config.php and update the database connection details with your own
-Upload the files to your web server
+1. Clone the repository to your local machine using git clone https://github.com/viveKing21/masai-ecom.git
+2. Create a database on your local MySQL server
+3. Import the belk.sql file into your newly created database
+4. Open config.php and update the database connection details with your own
+5. Upload the files to your web server
 
 # Usage
 Once you have installed the website, you can access it by navigating to the URL where it is hosted. From there, you can browse and search for products, add them to your shopping cart, and checkout. You can also create an account to save your information for future purchases.
