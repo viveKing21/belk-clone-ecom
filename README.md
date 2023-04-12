@@ -15,5 +15,8 @@ JavaScript
 # Usage
 Once you have installed the website, you can access it by navigating to the URL where it is hosted. From there, you can browse and search for products, add them to your shopping cart, and checkout. You can also create an account to save your information for future purchases.
 
+# Deployment
+This website is deployed on Netlify at https://peppy-shortbread-853480.netlify.app/. Netlify is a platform that provides hosting and continuous deployment services for web applications.
+
 # Contributing
 Contributions are always welcome! If you would like to contribute to this project, please fork the repository and create a pull request.
