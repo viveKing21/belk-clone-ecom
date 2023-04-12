@@ -3,7 +3,9 @@ This is a clone of the popular ecommerce website FirstCry.com. The website provi
 
 # Technologies Used
 HTML
+
 CSS
+
 JavaScript
 
 # Installation
