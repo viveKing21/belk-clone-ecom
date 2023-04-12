@@ -10,10 +10,7 @@ JavaScript
 
 # Installation
 1. Clone the repository to your local machine using git clone https://github.com/viveKing21/masai-ecom.git
-2. Create a database on your local MySQL server
-3. Import the belk.sql file into your newly created database
-4. Open config.php and update the database connection details with your own
-5. Upload the files to your web server
+2. Upload the files to your web server
 
 # Usage
 Once you have installed the website, you can access it by navigating to the URL where it is hosted. From there, you can browse and search for products, add them to your shopping cart, and checkout. You can also create an account to save your information for future purchases.
